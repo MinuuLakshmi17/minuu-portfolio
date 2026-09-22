@@ -369,8 +369,9 @@
 
                         <p class="project-description">
 
-                            A concurrent task scheduling system built in C
-                            using POSIX inter-process communication.
+                            A Linux-based job scheduler daemon built in C
+                            that manages concurrent worker processes and
+                            scheduled workloads.
 
                         </p>
 
@@ -379,7 +380,8 @@
 
                             <li>
                                 Designed a multi-process architecture using
-                                shared memory and semaphores.
+                                shared memory, POSIX semaphores, signals,
+                                and inter-process communication.
                             </li>
 
                             <li>
@@ -389,7 +391,7 @@
 
                             <li>
                                 Built fault detection and worker recovery
-                                mechanisms.
+                                mechanisms for reliable task execution.
                             </li>
 
                         </ul>
@@ -398,6 +400,7 @@
                         <div class="tags">
 
                             <span>C</span>
+                            <span>Linux</span>
                             <span>POSIX IPC</span>
                             <span>Shared Memory</span>
                             <span>Semaphores</span>
@@ -405,7 +408,7 @@
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17"
+                        <a href="https://github.com/MinuuLakshmi17/task-scheduler"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -437,17 +440,38 @@
 
 
                         <h2>
-                            Kubernetes Self-Healing Deployment
+                            Kubernetes Autoscaling & Self-Healing
                         </h2>
 
 
                         <p class="project-description">
 
-                            A cloud-based microservice deployment designed
-                            to automatically recover from failures and scale
-                            based on demand.
+                            A Kubernetes-based deployment demonstrating
+                            container orchestration, automatic scaling,
+                            health monitoring, and recovery from failures.
 
                         </p>
+
+
+                        <ul>
+
+                            <li>
+                                Configured containerized workloads with
+                                Kubernetes deployments and persistent
+                                infrastructure components.
+                            </li>
+
+                            <li>
+                                Implemented autoscaling and self-healing
+                                behavior based on workload and service health.
+                            </li>
+
+                            <li>
+                                Integrated monitoring and load testing to
+                                observe system behavior under changing demand.
+                            </li>
+
+                        </ul>
 
 
                         <div class="tags">
@@ -456,13 +480,19 @@
                             <span>Docker</span>
                             <span>Google Cloud</span>
                             <span>Prometheus</span>
+                            <span>Grafana</span>
 
                         </div>
 
 
-                        <p class="project-status">
-                            Currently rebuilding and documenting.
-                        </p>
+                        <a href="https://github.com/MinuuLakshmi17/kubernetes-autoscaling-self-healing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            View on GitHub →
+
+                        </a>
 
                     </div>
 
@@ -500,6 +530,27 @@
                         </p>
 
 
+                        <ul>
+
+                            <li>
+                                Processed and analyzed network traffic data
+                                to identify patterns associated with malicious
+                                activity.
+                            </li>
+
+                            <li>
+                                Engineered features and trained classification
+                                models using Python and Scikit-learn.
+                            </li>
+
+                            <li>
+                                Evaluated model behavior to support
+                                intelligent network threat detection.
+                            </li>
+
+                        </ul>
+
+
                         <div class="tags">
 
                             <span>Python</span>
@@ -511,7 +562,7 @@
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17"
+                        <a href="https://github.com/MinuuLakshmi17/intelligent-network-threat-detection"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -523,6 +574,165 @@
                     </div>
 
                 </article>
+
+
+
+                <!-- PROJECT 4 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        04
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            SYSTEMS PROGRAMMING · NETWORKING
+                        </p>
+
+
+                        <h2>
+                            Concurrent Network Device Monitor
+                        </h2>
+
+
+                        <p class="project-description">
+
+                            A concurrent Linux network monitoring system
+                            written in C for tracking device health,
+                            detecting failures, and recovering from
+                            network faults.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Implemented concurrent TCP/IP device
+                                monitoring using POSIX threads.
+                            </li>
+
+                            <li>
+                                Added heartbeat monitoring and fault
+                                detection to identify unavailable devices.
+                            </li>
+
+                            <li>
+                                Designed recovery handling and thread-safe
+                                logging for reliable monitoring.
+                            </li>
+
+                        </ul>
+
+
+                        <div class="tags">
+
+                            <span>C</span>
+                            <span>Linux</span>
+                            <span>TCP/IP</span>
+                            <span>POSIX Threads</span>
+                            <span>Concurrency</span>
+
+                        </div>
+
+
+                        <a href="https://github.com/MinuuLakshmi17/concurrent-network-device-monitor"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            View on GitHub →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 5 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        05
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            SYSTEMS PROGRAMMING · NETWORKING
+                        </p>
+
+
+                        <h2>
+                            Mini KV Store
+                        </h2>
+
+
+                        <p class="project-description">
+
+                            A Redis-inspired in-memory key-value store built
+                            from scratch in C11/POSIX with TCP networking,
+                            concurrent clients, TTL expiration, and
+                            append-only persistence.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Designed a custom hash table using FNV-1a
+                                hashing, separate chaining, dynamic resizing,
+                                and rehashing.
+                            </li>
+
+                            <li>
+                                Implemented a concurrent TCP server with
+                                POSIX threads, command parsing, and a
+                                command-line client.
+                            </li>
+
+                            <li>
+                                Added TTL expiration, append-only persistence,
+                                restart/replay recovery, automated testing,
+                                and TCP performance benchmarking.
+                            </li>
+
+                        </ul>
+
+
+                        <div class="tags">
+
+                            <span>C11</span>
+                            <span>POSIX</span>
+                            <span>TCP</span>
+                            <span>Concurrency</span>
+                            <span>Hash Tables</span>
+                            <span>Persistence</span>
+
+                        </div>
+
+
+                        <a href="https://github.com/MinuuLakshmi17/mini-kv-store"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            View on GitHub →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
 
             </div>
 
@@ -680,12 +890,17 @@
 
 
                 <p class="contact-intro">
+
                     I'm always interested in discussing software, systems,
                     cloud technologies, and new opportunities.
+
                 </p>
 
 
-                <a href="mailto:minuulakshmi17@gmail.com"
+                <!-- Opens Gmail compose window with recipient pre-filled -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=minuulakshmi17@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="email">
 
                     minuulakshmi17@gmail.com
