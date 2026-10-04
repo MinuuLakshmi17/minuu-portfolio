@@ -73,7 +73,7 @@
                 <div class="hero-content">
 
                     <p class="eyebrow">
-                        SOFTWARE · SYSTEMS · CLOUD
+                        DISTRIBUTED SYSTEMS · BACKEND · SECURITY
                     </p>
 
 
@@ -86,9 +86,9 @@
                     <p class="hero-description">
 
                         Master's student in Computer Science at Binghamton
-                        University with interests in systems programming,
-                        cloud infrastructure, backend development, and
-                        intelligent applications.
+                        University. I build distributed systems, backend
+                        services, and security tooling — usually from
+                        scratch, to understand how things really work.
 
                     </p>
 
@@ -148,11 +148,11 @@
 
                         <p>
 
-                            My work spans systems programming, cloud
-                            infrastructure, backend development, and
-                            intelligent applications. I enjoy solving
-                            problems that require both technical depth and
-                            practical engineering.
+                            My work spans distributed systems, backend
+                            development, security analytics, and cloud
+                            infrastructure. I enjoy solving problems that
+                            require both technical depth and practical
+                            engineering.
 
                         </p>
 
@@ -214,7 +214,7 @@
                             <span>Open to</span>
 
                             <strong>
-                                CS & Software Engineering Opportunities
+                                Summer 2027 Backend Internships
                             </strong>
 
                         </div>
@@ -251,6 +251,7 @@
 
                         <p>C</p>
                         <p>Python</p>
+                        <p>Go</p>
                         <p>Java</p>
                         <p>SQL</p>
                         <p>Bash</p>
@@ -267,7 +268,7 @@
                         <p>Linux</p>
                         <p>Concurrency</p>
                         <p>Multi-Processing</p>
-                        <p>Process Management</p>
+                        <p>Distributed Consensus</p>
 
                     </div>
 
@@ -279,6 +280,7 @@
 
                         <p>Docker</p>
                         <p>Kubernetes</p>
+                        <p>AWS</p>
                         <p>Google Cloud Platform</p>
                         <p>Prometheus</p>
                         <p>Grafana</p>
@@ -291,10 +293,13 @@
 
                         <h3>BACKEND</h3>
 
+                        <p>FastAPI</p>
+                        <p>Flask</p>
                         <p>REST APIs</p>
-                        <p>Backend Development</p>
-                        <p>SQL Databases</p>
-                        <p>API Integration</p>
+                        <p>gRPC</p>
+                        <p>PostgreSQL</p>
+                        <p>Redis</p>
+                        <p>Celery</p>
 
                     </div>
 
@@ -305,8 +310,8 @@
                         <h3>DATA & AI</h3>
 
                         <p>Machine Learning</p>
-                        <p>Natural Language Processing</p>
                         <p>Scikit-learn</p>
+                        <p>LLM Integration</p>
                         <p>Data Analysis</p>
 
                     </div>
@@ -352,6 +357,166 @@
 
                     <div class="project-number">
                         01
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            DISTRIBUTED SYSTEMS
+                        </p>
+
+
+                        <h2>
+                            Raft KV Store
+                        </h2>
+
+
+                        <p class="project-description">
+
+                            A fault-tolerant distributed key-value store in Go,
+                            built on a from-scratch implementation of the Raft
+                            consensus protocol.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Implemented leader election with randomized
+                                timeouts, log replication with conflict
+                                resolution, and majority-quorum commit.
+                            </li>
+
+                            <li>
+                                Made writes durable: the API acknowledges only
+                                after majority commit, with crash recovery
+                                through log replay and snapshotting.
+                            </li>
+
+                            <li>
+                                Verified with 3-node integration tests and live
+                                kill -9 chaos drills proving no committed write
+                                is lost during leader failover.
+                            </li>
+
+                        </ul>
+
+
+                        <div class="tags">
+
+                            <span>Go</span>
+                            <span>Raft</span>
+                            <span>gRPC</span>
+                            <span>Consensus</span>
+                            <span>Fault Tolerance</span>
+
+                        </div>
+
+
+                        <a href="https://github.com/MinuuLakshmi17/raft-kv-store"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            View on GitHub →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 2 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            SECURITY ANALYTICS · APPLIED AI
+                        </p>
+
+
+                        <h2>
+                            LLM Security Log Analyzer
+                        </h2>
+
+
+                        <p class="project-description">
+
+                            A security log analytics platform pairing a
+                            time-windowed detection engine with
+                            prompt-injection-aware LLM alert enrichment.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Built a two-layer detection engine: stateless
+                                per-event rules plus stateful campaign
+                                correlation (brute force, password spraying,
+                                concurrent access) emitting one alert per
+                                campaign.
+                            </li>
+
+                            <li>
+                                Designed the LLM layer so deterministic rules
+                                stay authoritative and log input is treated as
+                                untrusted data, never as instructions.
+                            </li>
+
+                            <li>
+                                Shipped a FastAPI service with file ingestion,
+                                a Streamlit SOC dashboard, API-key auth, rate
+                                limiting, and 15 tests.
+                            </li>
+
+                        </ul>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>LLM</span>
+                            <span>Security</span>
+                            <span>Streamlit</span>
+
+                        </div>
+
+
+                        <a href="https://github.com/MinuuLakshmi17/llm-security-log-analyzer"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            View on GitHub →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 3 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        03
                     </div>
 
 
@@ -423,160 +588,6 @@
 
 
 
-                <!-- PROJECT 2 -->
-
-                <article class="project">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <p class="project-type">
-                            CLOUD INFRASTRUCTURE
-                        </p>
-
-
-                        <h2>
-                            Kubernetes Autoscaling & Self-Healing
-                        </h2>
-
-
-                        <p class="project-description">
-
-                            A Kubernetes-based deployment demonstrating
-                            container orchestration, automatic scaling,
-                            health monitoring, and recovery from failures.
-
-                        </p>
-
-
-                        <ul>
-
-                            <li>
-                                Configured containerized workloads with
-                                Kubernetes deployments and persistent
-                                infrastructure components.
-                            </li>
-
-                            <li>
-                                Implemented autoscaling and self-healing
-                                behavior based on workload and service health.
-                            </li>
-
-                            <li>
-                                Integrated monitoring and load testing to
-                                observe system behavior under changing demand.
-                            </li>
-
-                        </ul>
-
-
-                        <div class="tags">
-
-                            <span>Kubernetes</span>
-                            <span>Docker</span>
-                            <span>Google Cloud</span>
-                            <span>Prometheus</span>
-                            <span>Grafana</span>
-
-                        </div>
-
-
-                        <a href="https://github.com/MinuuLakshmi17/kubernetes-autoscaling-self-healing"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link">
-
-                            View on GitHub →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- PROJECT 3 -->
-
-                <article class="project">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <p class="project-type">
-                            MACHINE LEARNING · SECURITY
-                        </p>
-
-
-                        <h2>
-                            Intelligent Network Threat Detection
-                        </h2>
-
-
-                        <p class="project-description">
-
-                            A machine learning pipeline for identifying
-                            malicious network traffic using engineered
-                            features and classification models.
-
-                        </p>
-
-
-                        <ul>
-
-                            <li>
-                                Processed and analyzed network traffic data
-                                to identify patterns associated with malicious
-                                activity.
-                            </li>
-
-                            <li>
-                                Engineered features and trained classification
-                                models using Python and Scikit-learn.
-                            </li>
-
-                            <li>
-                                Evaluated model behavior to support
-                                intelligent network threat detection.
-                            </li>
-
-                        </ul>
-
-
-                        <div class="tags">
-
-                            <span>Python</span>
-                            <span>Machine Learning</span>
-                            <span>Scikit-learn</span>
-                            <span>Security</span>
-                            <span>Data Analysis</span>
-
-                        </div>
-
-
-                        <a href="https://github.com/MinuuLakshmi17/intelligent-network-threat-detection"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-link">
-
-                            View on GitHub →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
                 <!-- PROJECT 4 -->
 
                 <article class="project">
@@ -589,21 +600,20 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            SYSTEMS PROGRAMMING · NETWORKING
+                            BACKEND ENGINEERING
                         </p>
 
 
                         <h2>
-                            Concurrent Network Device Monitor
+                            Workout &amp; Nutrition API
                         </h2>
 
 
                         <p class="project-description">
 
-                            A concurrent Linux network monitoring system
-                            written in C for tracking device health,
-                            detecting failures, and recovering from
-                            network faults.
+                            A multi-user fitness tracking API with secure
+                            authentication, caching, and background job
+                            processing.
 
                         </p>
 
@@ -611,18 +621,20 @@
                         <ul>
 
                             <li>
-                                Implemented concurrent TCP/IP device
-                                monitoring using POSIX threads.
+                                Implemented JWT access tokens with rotating
+                                refresh tokens and a Redis allowlist for
+                                instant logout revocation.
                             </li>
 
                             <li>
-                                Added heartbeat monitoring and fault
-                                detection to identify unavailable devices.
+                                Added Redis caching and rate limiting, workout
+                                filters, and request-ID structured logging.
                             </li>
 
                             <li>
-                                Designed recovery handling and thread-safe
-                                logging for reliable monitoring.
+                                Built a Celery worker with a weekly summary
+                                fan-out task, containerized with Docker
+                                Compose; 15 tests green.
                             </li>
 
                         </ul>
@@ -630,16 +642,17 @@
 
                         <div class="tags">
 
-                            <span>C</span>
-                            <span>Linux</span>
-                            <span>TCP/IP</span>
-                            <span>POSIX Threads</span>
-                            <span>Concurrency</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>PostgreSQL</span>
+                            <span>Redis</span>
+                            <span>Celery</span>
+                            <span>Docker</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/concurrent-network-device-monitor"
+                        <a href="https://github.com/MinuuLakshmi17/workout-nutrition-api"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -660,6 +673,83 @@
 
                     <div class="project-number">
                         05
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <p class="project-type">
+                            CLOUD · SERVERLESS
+                        </p>
+
+
+                        <h2>
+                            Serverless URL Shortener
+                        </h2>
+
+
+                        <p class="project-description">
+
+                            A serverless URL shortener on AWS Lambda with
+                            pluggable storage backends and click analytics.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Wired storage backend selection to environment
+                                variables with DynamoDB and PostgreSQL
+                                support.
+                            </li>
+
+                            <li>
+                                Added idempotency keys with race-safe
+                                conditional writes and expiry validation on
+                                redirects.
+                            </li>
+
+                            <li>
+                                Deployed with AWS SAM including DynamoDB-backed
+                                click analytics; 44 tests pass.
+                            </li>
+
+                        </ul>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>AWS Lambda</span>
+                            <span>DynamoDB</span>
+                            <span>PostgreSQL</span>
+                            <span>Serverless</span>
+
+                        </div>
+
+
+                        <a href="https://github.com/MinuuLakshmi17/serverless-url-shortener"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link">
+
+                            View on GitHub →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECT 6 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        06
                     </div>
 
 
@@ -734,6 +824,17 @@
                 </article>
 
 
+
+                <p class="project-status">
+                    More projects on
+                    <a href="https://github.com/MinuuLakshmi17?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link">GitHub →</a>
+                </p>
+
+
+
             </div>
 
         </section>
@@ -741,6 +842,7 @@
 
 
         <!-- =========================
+             EXPERIENCE SECTION<!-- =========================
              EXPERIENCE SECTION
         ========================== -->
 
