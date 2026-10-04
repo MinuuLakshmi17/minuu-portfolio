@@ -1,17 +1,32 @@
 /* ========================================
-   ROOT VARIABLES
+   ROOT VARIABLES — dark theme (default)
 ======================================== */
 
 :root {
-    --background: #faf9f6;
-    --text: #1a1a1a;
-    --secondary-text: #666666;
-    --accent: #2f4f3e;
-    --border: #e5e3de;
+    --background: #0d1117;
+    --surface: #161b22;
+    --text: #f0f6fc;
+    --secondary-text: #9aa4b2;
+    --accent: #7aa2f7;
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    --border: #2c2c2c;
 
     --serif: "Fraunces", serif;
     --sans: "Inter", sans-serif;
     --mono: "JetBrains Mono", monospace;
+}
+
+
+/* Light theme (toggle) */
+
+[data-theme="light"] {
+    --background: #faf9f6;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --secondary-text: #666666;
+    --accent: #2f4f3e;
+    --accent-gradient: linear-gradient(135deg, #2f4f3e, #5a8a6a);
+    --border: #e5e3de;
 }
 
 
@@ -37,11 +52,18 @@ body {
     font-family: var(--sans);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
 a {
     color: inherit;
+}
+
+
+::selection {
+    background: #3b82f6;
+    color: #ffffff;
 }
 
 
@@ -64,10 +86,17 @@ a {
     top: 0;
     z-index: 100;
 
-    background: rgba(250, 249, 246, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(12px);
 
     border-bottom: 1px solid var(--border);
+
+    transition: background-color 0.3s ease;
+}
+
+
+[data-theme="light"] .navbar {
+    background: rgba(250, 249, 246, 0.9);
 }
 
 
@@ -91,6 +120,11 @@ a {
     letter-spacing: 0.08em;
 
     text-decoration: none;
+
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -112,7 +146,32 @@ a {
 
 
 .nav-links a:hover {
-    color: var(--accent);
+    color: var(--text);
+}
+
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    transform: scale(1.08);
 }
 
 
@@ -163,6 +222,11 @@ a {
     letter-spacing: -0.04em;
 
     margin-bottom: 32px;
+
+    background: linear-gradient(135deg, var(--text) 0%, var(--secondary-text) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -195,7 +259,7 @@ a {
 
     padding: 14px 22px;
 
-    border-radius: 2px;
+    border-radius: 6px;
 
     font-size: 0.9rem;
     font-weight: 500;
@@ -205,7 +269,8 @@ a {
     transition:
         transform 0.2s ease,
         background 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
@@ -215,10 +280,17 @@ a {
 
 
 .button-primary {
-    background: var(--accent);
-    color: white;
+    background: var(--accent-gradient);
+    color: #ffffff;
 
-    border: 1px solid var(--accent);
+    border: 1px solid transparent;
+
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.35);
+}
+
+
+.button-primary:hover {
+    box-shadow: 0 6px 32px rgba(59, 130, 246, 0.5);
 }
 
 
@@ -226,10 +298,17 @@ a {
     color: var(--text);
 
     border: 1px solid var(--border);
+    background: transparent;
 }
 
 
 .button-secondary:hover {
+    border-color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+[data-theme="light"] .button-secondary:hover {
     background: #f2f1ed;
 }
 
@@ -338,6 +417,16 @@ a {
 }
 
 
+.skill-group {
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    padding: 28px;
+}
+
+
 .skill-group h3 {
     font-family: var(--mono);
 
@@ -359,6 +448,11 @@ a {
 }
 
 
+.skill-group p:last-child {
+    margin-bottom: 0;
+}
+
+
 /* ========================================
    PROJECTS
 ======================================== */
@@ -376,7 +470,7 @@ a {
 }
 
 
-.project:last-child {
+.project:last-of-type {
     border-bottom: 1px solid var(--border);
 }
 
@@ -435,6 +529,11 @@ a {
 }
 
 
+.project li::marker {
+    color: var(--accent);
+}
+
+
 /* ========================================
    PROJECT TAGS
 ======================================== */
@@ -452,13 +551,15 @@ a {
 .tags span {
     font-family: var(--mono);
 
-    color: var(--accent);
+    color: var(--text);
 
     font-size: 0.7rem;
 
-    padding: 6px 10px;
+    padding: 6px 12px;
 
+    background: var(--surface);
     border: 1px solid var(--border);
+    border-radius: 20px;
 }
 
 
@@ -479,10 +580,9 @@ a {
 .project-status {
     color: var(--secondary-text);
 
-    font-size: 0.85rem;
-    font-style: italic;
+    font-size: 0.9rem;
 
-    margin-top: 20px;
+    margin-top: 32px;
 }
 
 
@@ -550,6 +650,8 @@ a {
     padding: 140px 0;
 
     border-top: 1px solid var(--border);
+
+    text-align: left;
 }
 
 
@@ -563,6 +665,11 @@ a {
     letter-spacing: -0.04em;
 
     margin-bottom: 24px;
+
+    background: linear-gradient(135deg, var(--text) 0%, var(--secondary-text) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -613,7 +720,7 @@ a {
 
 
 .social-links a:hover {
-    color: var(--accent);
+    color: var(--text);
 }
 
 
@@ -645,6 +752,21 @@ footer .container {
     font-family: var(--mono);
 
     font-size: 0.7rem;
+}
+
+
+/* ========================================
+   JAVASCRIPT INTERACTIONS
+======================================== */
+
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.nav-links a.active {
+    color: var(--text);
+    font-weight: 500;
 }
 
 
@@ -819,19 +941,6 @@ footer .container {
         align-items: flex-start;
 
         gap: 10px;
-    }
-    /* ========================================
-        JAVASCRIPT INTERACTIONS
-    ======================================== */
-
-    .navbar.scrolled {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
-
-
-    .nav-links a.active {
-        color: var(--accent);
-        font-weight: 500;
     }
 
 }

@@ -75,6 +75,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ========================================
+    // THEME TOGGLE (dark default, like prefers-color-scheme)
+    // ========================================
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const root = document.documentElement;
+
+    function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        themeToggle.textContent = theme === "light" ? "☀️" : "🌙";
+        try {
+            localStorage.setItem("portfolio-theme", theme);
+        } catch (e) { /* private mode */ }
+    }
+
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem("portfolio-theme");
+    } catch (e) { /* private mode */ }
+
+    applyTheme(savedTheme || "dark");
+
+    themeToggle.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+        applyTheme(current === "light" ? "dark" : "light");
+    });
+
+
+    // ========================================
     // INITIALIZE PAGE STATE
     // ========================================
 
