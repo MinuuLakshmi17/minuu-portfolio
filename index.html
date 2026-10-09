@@ -355,7 +355,7 @@
 
 
 
-                <!-- PROJECT 1 -->
+                                <!-- PROJECT 1 -->
 
                 <article class="project">
 
@@ -367,20 +367,21 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            DISTRIBUTED SYSTEMS
+                            FULL-STACK SECURITY · SOC PLATFORM
                         </p>
 
 
                         <h2>
-                            Raft KV Store
+                            Sentinel — Cyber Threat Dashboard
                         </h2>
 
 
                         <p class="project-description">
 
-                            A fault-tolerant distributed key-value store in Go,
-                            built on a from-scratch implementation of the Raft
-                            consensus protocol.
+                            A full-stack security operations dashboard for
+                            alert triage and threat analytics: React frontend,
+                            FastAPI backend, MongoDB persistence, and Docker
+                            Compose orchestration.
 
                         </p>
 
@@ -388,21 +389,23 @@
                         <ul>
 
                             <li>
-                                Implemented leader election with randomized
-                                timeouts, log replication with conflict
-                                resolution, and majority-quorum commit.
+                                Built the analyst workflow end to end: alert
+                                queue with search and severity/status filters,
+                                a triage state machine with analyst assignment,
+                                KPI dashboard, trend charts, and CSV export.
                             </li>
 
                             <li>
-                                Made writes durable: the API acknowledges only
-                                after majority commit, with crash recovery
-                                through log replay and snapshotting.
+                                Wrote an ingestion adapter that forwards live
+                                findings from a detection engine into the
+                                dashboard — turning demo data into a working
+                                detection-to-triage pipeline.
                             </li>
 
                             <li>
-                                Verified with 3-node integration tests and live
-                                kill -9 chaos drills proving no committed write
-                                is lost during leader failover.
+                                20 tests passing across backend, frontend, and
+                                adapter layers; production bundle and live API
+                                behavior verified.
                             </li>
 
                         </ul>
@@ -410,16 +413,16 @@
 
                         <div class="tags">
 
-                            <span>Go</span>
-                            <span>Raft</span>
-                            <span>gRPC</span>
-                            <span>Consensus</span>
-                            <span>Fault Tolerance</span>
+                            <span>React</span>
+                            <span>FastAPI</span>
+                            <span>MongoDB</span>
+                            <span>Docker</span>
+                            <span>Security</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/raft-kv-store"
+                        <a href="https://github.com/MinuuLakshmi17/cyber-threat-dashboard"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -446,20 +449,21 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            SECURITY ANALYTICS · APPLIED AI
+                            CLOUD SECURITY · CSPM
                         </p>
 
 
                         <h2>
-                            LLM Security Log Analyzer
+                            CloudGuard
                         </h2>
 
 
                         <p class="project-description">
 
-                            A security log analytics platform pairing a
-                            time-windowed detection engine with
-                            prompt-injection-aware LLM alert enrichment.
+                            A cloud security posture manager that scans
+                            Terraform plans for misconfigurations: public
+                            storage, open security groups, unencrypted
+                            volumes, and wildcard IAM permissions.
 
                         </p>
 
@@ -467,23 +471,24 @@
                         <ul>
 
                             <li>
-                                Built a two-layer detection engine: stateless
-                                per-event rules plus stateful campaign
-                                correlation (brute force, password spraying,
-                                concurrent access) emitting one alert per
-                                campaign.
+                                Implemented a real static-analysis engine over
+                                Terraform plan JSON — 7 policy checks with
+                                deterministic fingerprints, severity scoring,
+                                evidence, and remediation guidance.
                             </li>
 
                             <li>
-                                Designed the LLM layer so deterministic rules
-                                stay authoritative and log input is treated as
-                                untrusted data, never as instructions.
+                                Built the platform around it: FastAPI service,
+                                PostgreSQL findings store, Redis-backed scan
+                                job queue with a worker, and a React +
+                                TypeScript dashboard with remediation tracking.
                             </li>
 
                             <li>
-                                Shipped a FastAPI service with file ingestion,
-                                a Streamlit SOC dashboard, API-key auth, rate
-                                limiting, and 15 tests.
+                                Adversarially tested: a vulnerable plan yields
+                                7 findings while a hardened plan yields zero;
+                                path-traversal attacks on the plan loader are
+                                blocked.
                             </li>
 
                         </ul>
@@ -491,16 +496,17 @@
 
                         <div class="tags">
 
-                            <span>Python</span>
+                            <span>React</span>
+                            <span>TypeScript</span>
                             <span>FastAPI</span>
-                            <span>LLM</span>
-                            <span>Security</span>
-                            <span>Streamlit</span>
+                            <span>PostgreSQL</span>
+                            <span>Redis</span>
+                            <span>Terraform</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/llm-security-log-analyzer"
+                        <a href="https://github.com/MinuuLakshmi17/cloudguard"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -527,20 +533,20 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            SYSTEMS PROGRAMMING
+                            LINUX PACKAGING
                         </p>
 
 
                         <h2>
-                            Multi-Process Task Scheduler
+                            Mini Snap Packager
                         </h2>
 
 
                         <p class="project-description">
 
-                            A Linux-based job scheduler daemon built in C
-                            that manages concurrent worker processes and
-                            scheduled workloads.
+                            A snap-style Linux package builder in Python: it
+                            validates a manifest, stages sources safely, and
+                            produces an installable squashfs artifact.
 
                         </p>
 
@@ -548,19 +554,20 @@
                         <ul>
 
                             <li>
-                                Designed a multi-process architecture using
-                                shared memory, POSIX semaphores, signals,
-                                and inter-process communication.
+                                Implemented manifest validation, traversal-
+                                and symlink-escape-safe staging, and
+                                meta/snap.yaml generation.
                             </li>
 
                             <li>
-                                Implemented worker pools and task queues for
-                                concurrent job execution.
+                                Fixed a real defect where dangling symlinks
+                                crashed the build, with regression tests
+                                proving the fix.
                             </li>
 
                             <li>
-                                Built fault detection and worker recovery
-                                mechanisms for reliable task execution.
+                                9 tests passing, including adversarial cases
+                                for malicious source trees.
                             </li>
 
                         </ul>
@@ -568,16 +575,16 @@
 
                         <div class="tags">
 
-                            <span>C</span>
+                            <span>Python</span>
                             <span>Linux</span>
-                            <span>POSIX IPC</span>
-                            <span>Shared Memory</span>
-                            <span>Semaphores</span>
+                            <span>Packaging</span>
+                            <span>SquashFS</span>
+                            <span>Build Tools</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/task-scheduler"
+                        <a href="https://github.com/MinuuLakshmi17/mini-snap-packager"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -604,20 +611,21 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            BACKEND ENGINEERING
+                            CONTAINER PACKAGING
                         </p>
 
 
                         <h2>
-                            Workout &amp; Nutrition API
+                            OCI Image Builder
                         </h2>
 
 
                         <p class="project-description">
 
-                            A multi-user fitness tracking API with secure
-                            authentication, caching, and background job
-                            processing.
+                            A pure-Python builder that turns a YAML spec into
+                            a valid OCI image layout — deterministic layer
+                            tarballs, content-addressed blobs, config,
+                            manifest, and index — with no Docker daemon.
 
                         </p>
 
@@ -625,20 +633,21 @@
                         <ul>
 
                             <li>
-                                Implemented JWT access tokens with rotating
-                                refresh tokens and a Redis allowlist for
-                                instant logout revocation.
+                                Implemented the full OCI image-spec chain by
+                                hand: reproducible layer archives, sha256
+                                digest linking, and diff_id correctness for
+                                uncompressed layers.
                             </li>
 
                             <li>
-                                Added Redis caching and rate limiting, workout
-                                filters, and request-ID structured logging.
+                                Verified the digest chain independently and
+                                proved byte-identical reproducibility across
+                                builds.
                             </li>
 
                             <li>
-                                Built a Celery worker with a weekly summary
-                                fan-out task, containerized with Docker
-                                Compose; 15 tests green.
+                                Hardened the builder against symlink-escape
+                                and path-traversal attacks in layer sources.
                             </li>
 
                         </ul>
@@ -647,16 +656,14 @@
                         <div class="tags">
 
                             <span>Python</span>
-                            <span>FastAPI</span>
-                            <span>PostgreSQL</span>
-                            <span>Redis</span>
-                            <span>Celery</span>
-                            <span>Docker</span>
+                            <span>OCI</span>
+                            <span>Containers</span>
+                            <span>Reproducible Builds</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/workout-nutrition-api"
+                        <a href="https://github.com/MinuuLakshmi17/oci-image-builder"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -683,19 +690,21 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            CLOUD · SERVERLESS
+                            LINUX INTERNALS
                         </p>
 
 
                         <h2>
-                            Serverless URL Shortener
+                            Mini Container Runtime
                         </h2>
 
 
                         <p class="project-description">
 
-                            A serverless URL shortener on AWS Lambda with
-                            pluggable storage backends and click analytics.
+                            A Linux container runtime in Python: mount, UTS,
+                            IPC, and PID namespaces, chroot isolation, and
+                            cgroups v2 resource limits, driven by a JSON run
+                            spec.
 
                         </p>
 
@@ -703,20 +712,21 @@
                         <ul>
 
                             <li>
-                                Wired storage backend selection to environment
-                                variables with DynamoDB and PostgreSQL
-                                support.
+                                Launched isolated containers with their own
+                                PID 1, hostname, and proc filesystem —
+                                verified live with root execution.
                             </li>
 
                             <li>
-                                Added idempotency keys with race-safe
-                                conditional writes and expiry validation on
-                                redirects.
+                                Debugged and fixed two real defects found
+                                through live runs: a missing sethostname
+                                syscall binding and a proc mount ordered
+                                before chroot.
                             </li>
 
                             <li>
-                                Deployed with AWS SAM including DynamoDB-backed
-                                click analytics; 44 tests pass.
+                                Enforced memory, CPU, and process-count
+                                limits through cgroups v2.
                             </li>
 
                         </ul>
@@ -725,15 +735,15 @@
                         <div class="tags">
 
                             <span>Python</span>
-                            <span>AWS Lambda</span>
-                            <span>DynamoDB</span>
-                            <span>PostgreSQL</span>
-                            <span>Serverless</span>
+                            <span>Linux</span>
+                            <span>Namespaces</span>
+                            <span>cgroups</span>
+                            <span>Containers</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/serverless-url-shortener"
+                        <a href="https://github.com/MinuuLakshmi17/mini-container-runtime"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -760,21 +770,20 @@
                     <div class="project-content">
 
                         <p class="project-type">
-                            SYSTEMS PROGRAMMING · NETWORKING
+                            ML INFRASTRUCTURE · DISTRIBUTED SYSTEMS
                         </p>
 
 
                         <h2>
-                            Mini KV Store
+                            Distributed Training Engine
                         </h2>
 
 
                         <p class="project-description">
 
-                            A Redis-inspired in-memory key-value store built
-                            from scratch in C11/POSIX with TCP networking,
-                            concurrent clients, TTL expiration, and
-                            append-only persistence.
+                            Data-parallel SGD from scratch over raw TCP: a
+                            ring all-reduce with gradient bucketing across
+                            worker processes, no frameworks.
 
                         </p>
 
@@ -782,21 +791,21 @@
                         <ul>
 
                             <li>
-                                Designed a custom hash table using FNV-1a
-                                hashing, separate chaining, dynamic resizing,
-                                and rehashing.
+                                Implemented ring all-reduce with strided
+                                gradient sharding and bucketed communication
+                                over TCP sockets.
                             </li>
 
                             <li>
-                                Implemented a concurrent TCP server with
-                                POSIX threads, command parsing, and a
-                                command-line client.
+                                Proved correctness: 4 workers at batch 32
+                                follow the exact single-worker batch-128
+                                trajectory, agreeing to 1e-6.
                             </li>
 
                             <li>
-                                Added TTL expiration, append-only persistence,
-                                restart/replay recovery, automated testing,
-                                and TCP performance benchmarking.
+                                Documented a real 65x latency win from
+                                disabling Nagle's algorithm on small gradient
+                                messages.
                             </li>
 
                         </ul>
@@ -804,17 +813,15 @@
 
                         <div class="tags">
 
-                            <span>C11</span>
-                            <span>POSIX</span>
+                            <span>Python</span>
                             <span>TCP</span>
-                            <span>Concurrency</span>
-                            <span>Hash Tables</span>
-                            <span>Persistence</span>
+                            <span>All-Reduce</span>
+                            <span>Distributed Training</span>
 
                         </div>
 
 
-                        <a href="https://github.com/MinuuLakshmi17/mini-kv-store"
+                        <a href="https://github.com/MinuuLakshmi17/distributed-training-engine"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="project-link">
@@ -829,7 +836,7 @@
 
 
 
-                <p class="project-status">
+<p class="project-status">
                     More projects on
                     <a href="https://github.com/MinuuLakshmi17?tab=repositories"
                         target="_blank"
